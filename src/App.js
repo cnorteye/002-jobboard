@@ -12,7 +12,7 @@ import store from './store';
 
 function App() {
   return (
-    <Provider className="App">
+    <Provider store={store}>
       <Navbar />
       <Header />
       <Filter />
