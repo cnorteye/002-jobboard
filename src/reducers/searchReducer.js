@@ -3,7 +3,7 @@ import {
     FETCH_JOBS,
     FETCH_JOB,
     LOADING
-  } from '../actions/types';
+  } from '../actions/actionTypes';
   
   const initialState = {
     text: '',
