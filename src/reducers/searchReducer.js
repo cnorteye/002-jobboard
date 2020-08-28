@@ -1,35 +1,35 @@
 import {
-    SEARCH_MOVIE,
-    FETCH_MOVIES,
-    FETCH_MOVIE,
+    SEARCH_JOB,
+    FETCH_JOBS,
+    FETCH_JOB,
     LOADING
   } from '../actions/types';
   
   const initialState = {
     text: '',
-    movies: [],
+    jobs: [],
     loading: false,
-    movie: []
+    job: []
   };
   
   export default function(state = initialState, action) {
     switch (action.type) {
-      case SEARCH_MOVIE:
+      case SEARCH_JOB:
         return {
           ...state,
           text: action.payload,
           loading: false
         };
-      case FETCH_MOVIES:
+      case FETCH_JOBS:
         return {
           ...state,
-          movies: action.payload,
+          jobs: action.payload,
           loading: false
         };
-      case FETCH_MOVIE:
+      case FETCH_JOB:
         return {
           ...state,
-          movie: action.payload,
+          job: action.payload,
           loading: false
         };
       case LOADING:

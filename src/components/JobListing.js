@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+
+import {fetchJobs} from '../actions/searchActions';
 
 export class JobListing extends Component {
     render() {
@@ -208,4 +211,10 @@ export class JobListing extends Component {
     }
 }
 
-export default JobListing
+const mapStateToProps = state => ({
+    jobs: state.jobs.jobs
+})
+
+export default connect(
+    mapStateToProps, {fetchJobs})
+     (JobListing)

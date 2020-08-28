@@ -1,4 +1,4 @@
-import { SEARCH_JOB, FETCH_JOBS, FETCH_JOB, LOADING } from './types';
+import { SEARCH_JOB, FETCH_JOBS, FETCH_JOB, LOADING } from './actionTypes';
 import axios from 'axios';
 
 export const searchJob = text => dispatch => {
