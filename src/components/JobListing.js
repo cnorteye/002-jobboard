@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
+import { Link } from 'react-router-dom';
+
+import { Filter } from './Filter';
+
+
+
 import {fetchJobs} from '../actions/searchActions';
 
 export class JobListing extends Component {
@@ -8,8 +14,9 @@ export class JobListing extends Component {
         return (
              
              <div class="job_listing_area plus_padding">
-            <div class="container">
-            <div class="row">
+                 <Filter />
+                <div class="container">
+                <div class="row">
                 <div class="col-lg-12">
                     <div class="job_lists m-0">
                         <div class="row">
@@ -34,7 +41,7 @@ export class JobListing extends Component {
                                     <div class="jobs_right">
                                         <div class="apply_now">
                                             <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
-                                            <a href="job_details.html" class="boxed-btn3">Apply Now</a>
+                                            <Link className="boxed-btn3" to='/job/' >Apply Now </Link>
                                         </div>
                                         <div class="date">
                                             <p>Date line: 31 Jan 2020</p>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import {fetchJob} from '../actions/searchActions';
 
@@ -7,7 +8,7 @@ export class JobDetail extends Component {
     render() {
         return (
             <div class="job_details_area">
-        <div class="container">
+            <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="job_details_header">
@@ -141,6 +142,9 @@ export class JobDetail extends Component {
                             
                           </div>
                     </div>
+                    <Link to="/" className="btn btn-default text-light">
+                         Go Back To Search
+                    </Link>
                 </div>
             </div>
         </div>
@@ -150,7 +154,7 @@ export class JobDetail extends Component {
 }
 
 const mapStateToProps = state => ({
-    job: state.job.job
+    jobs: state.jobs.jobs
 })
 
 export default connect(
