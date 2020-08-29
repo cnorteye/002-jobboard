@@ -5,7 +5,7 @@ import { START_PLURAL_JOBS_FETCH,
         } from './actionTypes';
 
 // action creator for START PLURAL JOBS FETCH
-export const fetchPluralJobs =() =>({
+export const fetchPluralJobs = () =>({
   type: START_PLURAL_JOBS_FETCH
 })
 

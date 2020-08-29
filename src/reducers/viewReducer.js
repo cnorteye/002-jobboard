@@ -25,7 +25,7 @@ export default function common(state = initialState, action) {
           loading: true
         }
       case SINGLE_JOB_FETCH_SUCCESS:
-        const { data } = action.payload;
+        const {data} = action.payload;
         return {
           ...state,
           data,

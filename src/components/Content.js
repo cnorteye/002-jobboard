@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import JobBoard from './JobListing';
 import { connect } from 'react-redux';
 import { pullAllJobs} from '../asyncActions/searchAsyncAction';
 import JobListing from './JobListing';

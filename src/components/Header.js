@@ -5,13 +5,13 @@ export class Header extends Component {
         return (
         <div>
             <header>
-            <div class="header-area ">
-                <div id="sticky-header" class="main-header-area">
-                    <div class="container-fluid ">
-                        <div class="header_bottom_border">
-                            <div class="row align-items-center">
-                                <div class="col-xl-3 col-lg-2">
-                                    <div class="logo">
+            <div className="header-area ">
+                <div id="sticky-header" className="main-header-area">
+                    <div className="container-fluid ">
+                        <div className="header_bottom_border">
+                            <div className="row align-items-center">
+                                <div className="col-xl-3 col-lg-2">
+                                    <div className="logo">
                                         <a href="index.html">
                                             <img src="img/logo.png" alt="" />
                                         </a>
@@ -23,11 +23,11 @@ export class Header extends Component {
                 </div>
             </div>
         </header>    
-        <div class="bradcam_area bradcam_bg_1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="bradcam_text">
+        <div className="bradcam_area bradcam_bg_1">
+            <div className="container">
+                <div className="row">
+                    <div className="col-xl-12">
+                        <div className="bradcam_text">
                             <h3>Search For Developer Jobs in America</h3>
                         </div>
                     </div>

@@ -1,7 +1,6 @@
 // this is the single job detial page
 
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
  
 class JobDetail extends Component {
   
@@ -48,7 +47,7 @@ class JobDetail extends Component {
                 <div className="col-lg-4">
                     <div className="job_sumary">
                         <div className="summery_header">
-                            <h3>Job Summery</h3>
+                            <h3>Job Summary</h3>
                         </div>
                         <div className="job_content">
                             <ul>
@@ -57,9 +56,6 @@ class JobDetail extends Component {
                                 <li>Location: <span>{this.props.job.location}</span></li>
                                 <li>Job Nature: <span> {this.props.job.type}</span></li>
                             </ul>
-                          <div className="single_wrap">
-                              <Link className='btn btn-success'> Go back to search page </Link>
-                        </div>
                         </div>
                     </div>
                 </div>

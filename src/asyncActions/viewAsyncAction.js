@@ -1,7 +1,7 @@
 import {fetchSingleJob, singleJobFailure,singleJobSuccess} from '../actions/viewActions';
 
 // get user list
-export const pullOneJob = (id = 0) => async dispatch => {
+export const pullOneJob = (id=0) => async dispatch => {
     dispatch(fetchSingleJob());
     try {
       const res = await fetch(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${id}.json`);

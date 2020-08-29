@@ -4,8 +4,10 @@ import React, { Component } from 'react';
 import {viewOneJob} from "../actions/viewActions"
 import { connect } from 'react-redux';
 
+import {Link} from 'react-router-dom';
+
  
-class JobBoard extends Component {
+class JobListing extends Component {
   render() {
     const {viewOneJob} = this.props
     return (
@@ -30,7 +32,7 @@ class JobBoard extends Component {
           <div className="jobs_right">
               <div className="apply_now">
                   <a className="heart_mark" href="#"> <i className="fa fa-heart"></i> </a>
-                  <button className="boxed-btn3" onClick={() => viewOneJob(this.props.job.id)}>Apply Now</button>
+                  <Link to={'/job_details/'+ this.props.job.id} className="boxed-btn3" onClick={() => viewOneJob(this.props.job.id)}>Apply Now</Link>
               </div>
               <div className="date">
                   <p>Date line: {this.props.job.created_at}</p>
@@ -48,5 +50,5 @@ const mapDispatchToProps = {
 }
 
 
-export default connect(null, mapDispatchToProps)(JobBoard);
+export default connect(null, mapDispatchToProps)(JobListing);
 
