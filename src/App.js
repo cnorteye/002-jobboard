@@ -18,7 +18,7 @@ function App() {
         <div>
             <Header />
             <Route exact path="/" component={ContentFilter} />
-            <Route path='/job:id/' component ={Detail} />
+            <Route path='/job/:id' component={Detail} />
             <Footer />
         </div>
     </Router>
