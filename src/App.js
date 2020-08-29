@@ -3,11 +3,11 @@ import { Provider } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import JobListing from './components/JobListing';
-import JobDetail from './components/JobDetail';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import ContentFilter from './components/ContentFilter'
+import Detail from './components/Detail';
+
 
 import store from './store';
 
@@ -16,10 +16,9 @@ function App() {
     <Provider store={store}>
       <Router>
         <div>
-            <Navbar />
             <Header />
-            <Route exact path="/" component={JobListing} />
-            <Route exact path='/job/' component ={JobDetail} />
+            <Route exact path="/" component={ContentFilter} />
+            <Route exact path='/job:id/' component ={Detail} />
             <Footer />
         </div>
     </Router>

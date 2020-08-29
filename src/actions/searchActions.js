@@ -1,39 +1,32 @@
-import { SEARCH_JOB, FETCH_JOBS, FETCH_JOB, LOADING } from './actionTypes';
-import axios from 'axios';
+import { START_PLURAL_JOBS_FETCH,
+         PLURAL_JOBS_FETCH_FAILURE,
+          PLURAL_JOBS_FETCH_SUCCESS, 
+          VIEW_ALL_JOBS, 
+        } from './actionTypes';
 
-export const searchJob = text => dispatch => {
-  dispatch({
-    type: SEARCH_JOB,
-    payload: text
-  });
-};
+// action creator for START PLURAL JOBS FETCH
+export const fetchPluralJobs =() =>({
+  type: START_PLURAL_JOBS_FETCH
+})
 
-export const fetchJobs = (description, location, fulltime) => dispatch => {
-  axios
-    .get(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${description}&full_time=${fulltime}&location=${location}`)
-    .then(response =>
-      dispatch({
-        type: FETCH_JOBS,
-        payload: response.data
-      })
-    )
-    .catch(err => console.log(err));
-};
+// action creator for VIEW ALL JOBS
+export const viewAllJobs = () => ({
+  type: VIEW_ALL_JOBS
+})
 
-export const fetchJob = id => dispatch => {
-  axios
-    .get(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${id}.json?`)
-    .then(response =>
-      dispatch({
-        type: FETCH_JOB,
-        payload: response.data
-      })
-    )
-    .catch(err => console.log(err));
-};
-
-export const setLoading = () => {
+// action creator for PLURAL JOBS FETCH SUCCESS
+export const pluralJobsSuccess = data => {
   return {
-    type: LOADING
-  };
-};
+    type: PLURAL_JOBS_FETCH_SUCCESS, 
+    payload: {data}
+  }
+}
+
+// action creator for PLURAL JOBS FETCH FAILURE
+export const pluralJobsFailure = error => {
+  return {
+    type: PLURAL_JOBS_FETCH_FAILURE,
+    payload: {error}
+  }
+}
+

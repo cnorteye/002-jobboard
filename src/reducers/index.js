@@ -1,6 +1,11 @@
 import { combineReducers } from 'redux';
-import searchReducer from './searchReducer';
+import jobs from './searchReducer';
+import job from './viewReducer';
 
-export default combineReducers({
-  jobs: searchReducer
+// to combine all reducers together
+const appReducer = combineReducers({
+  jobs,
+  job
 });
+ 
+export default appReducer;
