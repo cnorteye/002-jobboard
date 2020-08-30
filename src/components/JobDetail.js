@@ -54,7 +54,7 @@ class JobDetail extends Component {
                 <div className="col-lg-4">
                     <div className="job_sumary">
                         <div className="summery_header">
-                            <h3>Job Summery</h3>
+                            <h3>Job Summary</h3>
                         </div>
                         <div className="job_content">
                             <ul>
