@@ -1,8 +1,8 @@
 // this is the single job detial page
 
 import React, { Component } from 'react';
-import DOMPurify from 'dompurify';
-import {JSDOM} from 'jsdom';
+import HTMLParser from 'html-parser';
+
  
 class JobDetail extends Component {
   
@@ -42,7 +42,7 @@ class JobDetail extends Component {
                     <div className="descript_wrap white-bg">
                         <div className="single_wrap">
                          
-                          { <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.props.job.description) }} /> }
+                          { <div dangerouslySetInnerHTML={{ __html: HTMLParser.sanitize(this.props.job.description) }} /> }
                         </div>
                     </div>
                   <div className="col-md-12">
@@ -64,8 +64,7 @@ class JobDetail extends Component {
                                 <li>Job Nature: <span> {this.props.job.type}</span></li>
                             </ul>
                           <div className="single_wrap">
-                         
-                          { <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.props.job.how_to_apply) }} /> }
+                          { <div dangerouslySetInnerHTML={{ __html: HTMLParser.sanitize(this.props.job.how_to_apply) }} /> }
                         </div>
                         </div>
                     </div>
