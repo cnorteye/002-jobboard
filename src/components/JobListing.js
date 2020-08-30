@@ -32,7 +32,8 @@ class JobListing extends Component {
           <div className="jobs_right">
               <div className="apply_now">
                   <a className="heart_mark" href="#"> <i className="fa fa-heart"></i> </a>
-                  <Link to={'/job/'+ this.props.job.id} className="boxed-btn3" onClick={() => viewOneJob(this.props.job.id)}>Apply Now</Link>
+                  {/* <Link to={'/job/'+ this.props.job.id} className="boxed-btn3" onClick={() => viewOneJob(this.props.job.id)}>Apply Now</Link> */}
+                  <Link to={'/job/' + this.props.job.id} className="boxed-btn3">Apply Now</Link>
               </div>
               <div className="date">
                   <p>Date line: {this.props.job.created_at}</p>
