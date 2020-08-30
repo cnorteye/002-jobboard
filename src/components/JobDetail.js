@@ -1,15 +1,18 @@
 // this is the single job detial page
 
 import React, { Component } from 'react';
+import DOMPurify from 'dompurify';
+import {JSDOM} from 'jsdom';
  
 class JobDetail extends Component {
   
   render() {
     
     return (
-    <div className="job_details_area">
+        <div className="job_details_area">
         <div className="container">
             <div className="row">
+              
                 <div className="col-lg-8">
                     <div className="job_details_header">
                         <div className="single_jobs white-bg d-flex justify-content-between">
@@ -37,6 +40,10 @@ class JobDetail extends Component {
                         </div>
                     </div>
                     <div className="descript_wrap white-bg">
+                        <div className="single_wrap">
+                         
+                          { <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.props.job.description) }} /> }
+                        </div>
                     </div>
                   <div className="col-md-12">
                       <div className="submit_btn">
@@ -47,7 +54,7 @@ class JobDetail extends Component {
                 <div className="col-lg-4">
                     <div className="job_sumary">
                         <div className="summery_header">
-                            <h3>Job Summary</h3>
+                            <h3>Job Summery</h3>
                         </div>
                         <div className="job_content">
                             <ul>
@@ -56,6 +63,10 @@ class JobDetail extends Component {
                                 <li>Location: <span>{this.props.job.location}</span></li>
                                 <li>Job Nature: <span> {this.props.job.type}</span></li>
                             </ul>
+                          <div className="single_wrap">
+                         
+                          { <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.props.job.how_to_apply) }} /> }
+                        </div>
                         </div>
                     </div>
                 </div>

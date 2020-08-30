@@ -10,7 +10,7 @@ class Detail extends Component {
   
   
   componentDidMount() {
-    this.props.pullOneJob(this.props.id);
+    this.props.pullOneJob(this.props.match.params.id);
   }
   
   
