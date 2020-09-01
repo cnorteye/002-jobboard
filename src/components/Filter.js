@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { pullAllJobs } from '../asyncActions/searchAsyncAction';
-import { pullOneJob } from '../asyncActions/viewAsyncAction';
 
 export class Filter extends Component {
     onChange = e => {
-        pullAllJobs(e.target.value)
+        this.props.pullAllJobs(e.target.value)
+    }
+
+    onSubmit = e => {
+        e.preventDefault ();
+        this.props.pullAllJobs(this.props.location, this.props.description, this.props.fulltime)
     }
     render() {
-        const {location, description, fulltime } = this.props
-        const {pullAllJobs } = this.props
+        const {location, description, fulltime} = this.props
         return (
             <div className="row cat_search">
             <div className="col-lg-3 col-md-4">
@@ -29,7 +32,7 @@ export class Filter extends Component {
             </div>
             <div className="col-lg-3 col-md-12">
                 <div className="job_btn">
-                    <button className="boxed-btn3" onClick={(e) => pullAllJobs(0, location, fulltime, description)}>Find Job</button>
+                    <button className="boxed-btn3" onClick={this.onSubmit}>Find Job</button>
                 </div>
             </div>
         </div>
@@ -37,10 +40,11 @@ export class Filter extends Component {
     }
 }
 
-const mapDispatchToProps ={
-    pullAllJobs
-}
+const mapStateToProps = state => ({
+    location: state.jobs.location,
+    fulltime: state.jobs.fulltime, 
+    description: state.jobs.fulltime
+})
 
-export default connect(
-    null, mapDispatchToProps
+export default connect(mapStateToProps, {pullAllJobs}
 ) (Filter);

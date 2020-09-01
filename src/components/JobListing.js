@@ -9,7 +9,6 @@ import {Link} from 'react-router-dom';
  
 class JobListing extends Component {
   render() {
-    const {viewOneJob} = this.props
     return (
     <div className="col-lg-12 col-md-12">
       <div className="single_jobs white-bg d-flex justify-content-between">
@@ -18,7 +17,7 @@ class JobListing extends Component {
                   <img src={"img/svg_icon/"+(this.props.pic%5+1)+".svg"} alt="" />
               </div>
               <div className="jobs_conetent">
-                  <Link to={'/job/' + this.props.job.id}><h4>{this.props.job.title}</h4></Link>
+                  <Link to={'/job/' + this.props.job.id}target="_blank"><h4>{this.props.job.title}</h4></Link>
                   <div className="links_locat d-flex align-items-center">
                       <div className="location">
                           <p> <i className="fa fa-map-marker"></i> {this.props.job.location}</p>

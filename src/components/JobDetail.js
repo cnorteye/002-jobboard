@@ -47,7 +47,7 @@ class JobDetail extends Component {
                     </div>
                   <div className="col-md-12">
                       <div className="submit_btn">
-                          <a href={this.props.job.company_url} target="_blank" className="boxed-btn3 w-100" type="submit">Apply Now</a>
+                          <a href={this.props.job.company_url} target="_blank" rel='noopener noreferrer' className="boxed-btn3 w-100" type="submit">Apply Now</a>
                       </div>
                   </div>
                     </div>
