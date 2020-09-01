@@ -1,41 +1,30 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { pullAllJobs } from '../asyncActions/searchAsyncAction';
+import { pullOneJob } from '../asyncActions/viewAsyncAction';
 
 export class Filter extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-          location: "",
-          description: "",
-          fulltime: "false"
-        }
-      }
-
-    myChangeHandler = (event) => {
-        let nam = event.target.name;
-        let val = event.target.value; 
-        this.setState({[nam]: val});
+    onChange = e => {
+        pullAllJobs(e.target.value)
     }
-
     render() {
-        const {location, description, fulltime } = this.state
+        const {location, description, fulltime } = this.props
         const {pullAllJobs } = this.props
         return (
             <div className="row cat_search">
             <div className="col-lg-3 col-md-4">
                 <div className="single_input">
-                    <input type="text" placeholder="Search keyword" name='description' onChange={this.myChangeHandler} />
+                    <input type="text" placeholder="Search keyword" value={description} name='description' onChange={this.onChange} />
                 </div>
             </div>
             <div className="col-lg-3 col-md-4">
                 <div className="single_input">
-                    <input type="text" placeholder="Location" name="location" onChange={this.myChangeHandler} />
+                    <input type="text" placeholder="Location" value={location} name="location" onChange={this.onChange} />
                 </div>
             </div>
             <div className="col-lg-3 col-md-4">
                 <div className="single_input">
-                    <input type="checkbox" style={{width: 15}} name="fulltime" placeholder="Fulltime" onChange={this.myChangeHandler} /> <span style={{fontSize: 2 +"em"}} >Fulltime</span>
+                    <input type="checkbox" style={{width: 15}} name="fulltime" value={fulltime}  placeholder="Fulltime" onChange={this.onChange} /> <span style={{fontSize: 2 +"em"}} >Fulltime</span>
                 </div>
             </div>
             <div className="col-lg-3 col-md-12">
