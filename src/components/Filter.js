@@ -11,6 +11,13 @@ export class Filter extends Component {
           fulltime: "false"
         }
       }
+
+    myChangeHandler = (event) => {
+        let nam = event.target.name;
+        let val = event.target.value; 
+        this.setState({[nam]: val});
+    }
+
     render() {
         const {location, description, fulltime } = this.state
         const {pullAllJobs } = this.props
@@ -18,17 +25,17 @@ export class Filter extends Component {
             <div className="row cat_search">
             <div className="col-lg-3 col-md-4">
                 <div className="single_input">
-                    <input type="text" placeholder="Search keyword" value={description} onChange={e => this.setState({ description: e.target.value })} />
+                    <input type="text" placeholder="Search keyword" name='description' onChange={this.myChangeHandler} />
                 </div>
             </div>
             <div className="col-lg-3 col-md-4">
                 <div className="single_input">
-                    <input type="text" placeholder="Location" name="location" value={location} onChange={e => this.setState({ location: e.target.value })} />
+                    <input type="text" placeholder="Location" name="location" onChange={this.myChangeHandler} />
                 </div>
             </div>
             <div className="col-lg-3 col-md-4">
                 <div className="single_input">
-                    <input type="checkbox" style={{width: 15}} name="fulltime" placeholder="Fulltime"  value={fulltime} onChange={e => this.setState({ fulltime: e.target.value })}  /> <span style={{fontSize: 2 +"em"}} >Fulltime</span>
+                    <input type="checkbox" style={{width: 15}} name="fulltime" placeholder="Fulltime" onChange={this.myChangeHandler} /> <span style={{fontSize: 2 +"em"}} >Fulltime</span>
                 </div>
             </div>
             <div className="col-lg-3 col-md-12">

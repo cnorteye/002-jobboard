@@ -18,7 +18,7 @@ class JobListing extends Component {
                   <img src={"img/svg_icon/"+(this.props.pic%5+1)+".svg"} alt="" />
               </div>
               <div className="jobs_conetent">
-                  <a href={this.props.job.url} target="_blank"><h4>{this.props.job.title}</h4></a>
+                  <Link to={'/job/' + this.props.job.id}><h4>{this.props.job.title}</h4></Link>
                   <div className="links_locat d-flex align-items-center">
                       <div className="location">
                           <p> <i className="fa fa-map-marker"></i> {this.props.job.location}</p>

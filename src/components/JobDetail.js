@@ -20,7 +20,7 @@ class JobDetail extends Component {
                                 <div className="thumb">
                                     <img src={"img/svg_icon/"+(this.props.pic)+".svg"} alt="" />
                                 </div>
-                                <div className="jobs_conetent">
+                                <div className="jobs_content">
                                     <a href="#"><h4>{this.props.job.title}</h4></a>
                                     <div className="links_locat d-flex align-items-center">
                                         <div className="location">
