@@ -13,7 +13,7 @@ export const pullAllJobs = (page = 0, location = "", fulltime="false", descripti
       const data = await res.json();
       dispatch(pluralJobsSuccess(data));
     } catch (err) {
-      console.log("NOO"+err.message);
+      console.log(err.message);
       dispatch(pluralJobsFailure(err.message));
     }
   }

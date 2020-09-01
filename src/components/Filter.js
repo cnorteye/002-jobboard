@@ -7,9 +7,9 @@ export class Filter extends Component {
         this.props.pullAllJobs(e.target.value)
     }
 
-    onSubmit = e => {
+    onClick = e => {
         e.preventDefault ();
-        this.props.pullAllJobs(this.props.location, this.props.description, this.props.fulltime)
+        this.props.pullAllJobs(0, this.props.location, this.props.description, this.props.fulltime)
     }
     render() {
         const {location, description, fulltime} = this.props
@@ -30,11 +30,9 @@ export class Filter extends Component {
                     <input type="checkbox" style={{width: 15}} name="fulltime" value={fulltime}  placeholder="Fulltime" onChange={this.onChange} /> <span style={{fontSize: 2 +"em"}} >Fulltime</span>
                 </div>
             </div>
-            <div className="col-lg-3 col-md-12">
-                <div className="job_btn">
-                    <button className="boxed-btn3" onClick={this.onSubmit}>Find Job</button>
-                </div>
-            </div>
+            
+            <button className="boxed-btn3" type='submit' onClick={this.onClick}>Find Job</button>
+
         </div>
         )
     }
@@ -43,7 +41,7 @@ export class Filter extends Component {
 const mapStateToProps = state => ({
     location: state.jobs.location,
     fulltime: state.jobs.fulltime, 
-    description: state.jobs.fulltime
+    description: state.jobs.description
 })
 
 export default connect(mapStateToProps, {pullAllJobs}
